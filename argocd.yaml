@@ -7,7 +7,7 @@ metadata:
 spec:
   repo: https://argoproj.github.io/argo-helm
   chart: argo-cd
-  version: 6.0.6
+  version: 7.7.11
   targetNamespace: argo-cd
   valuesContent: |-
     # удаление crds при удалении helm чарта argoCD
@@ -47,7 +47,7 @@ spec:
         # -- Bcrypt hashed admin password
         ## Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
         ## `htpasswd -nbBC 10 "" $ARGO_PWD | tr -d ':\n' | sed 's/$2y/$2a/'`
-        argocdServerAdminPassword: "$2a$10$L8OqGEFh3a0yxwfIha4DLuyq6GIYP119hlFM5wlSEsI.nviVAv/zq"
+        argocdServerAdminPassword: "$2a$10$0.dkTxZh5w0dl4wCzW7mmuKebO0kIOSn5uErg8mj4MVYnj8OhAY5O"
 
     ## Redis
     redis:
