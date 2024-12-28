@@ -38,7 +38,7 @@ spec:
 
       
       repositories:
-        artur-repo:
+        zakhar-repo:
           url: https://github.com/vard0ni/k3s-homelab
           name: vard0ni
           type: git
@@ -59,7 +59,7 @@ spec:
       replicas: 1
       certificate:
         enabled: true
-        domain: cluster.local
+        domain: argocd-dev.cluster.local
         renewBefore: 360h
         duration: 9125h
         issuer:
@@ -79,7 +79,7 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/ssl-redirect: "false"
         ingressClassName: "system-ingress"
-        hostname: cluster.local
+        hostname: argocd-dev.cluster.local
         path: /
         pathType: Prefix
         tls: true
