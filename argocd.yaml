@@ -29,12 +29,41 @@ spec:
         server.insecure: true
 
       # В последней версии (2.13.1) исправили добавление сертификатов СА
-      # tls:
-      #   certificates:
-      #     myserver-ca: |
-      #       -----BEGIN CERTIFICATE-----
-      #       ...
-      #       -----END CERTIFICATE-----
+      tls:
+        certificates:
+          dev-ca-certs: |       
+            -----BEGIN CERTIFICATE-----
+            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
+            -----END CERTIFICATE-----
 
       
       repositories:
@@ -59,7 +88,7 @@ spec:
       replicas: 1
       certificate:
         enabled: true
-        domain: argocd-dev.cluster.local
+        domain: argocd-dev.gapeevz.local
         renewBefore: 360h
         duration: 9125h
         issuer:
@@ -79,19 +108,10 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/ssl-redirect: "false"
         ingressClassName: "system-ingress"
-        hostname: argocd-dev.cluster.local
+        hostname: argocd-dev.gapeevz.local
         path: /
         pathType: Prefix
         tls: true
     
     # В последней версии (2.13.1) исправили добавление сертификатов СА
     # Смотрите выше пример configs.tls.certificates
-    repoServer:
-      volumes:
-      - name: dev-ca-certs
-        secret:
-          secretName: dev-ca-certs
-      volumeMounts:
-      - mountPath: /etc/ssl/certs/dev-ca.pem
-        name: dev-ca-certs
-        subPath: dev-ca.pem
